@@ -4,8 +4,6 @@ import {
   createMediaHandler,
 } from 'next-tinacms-dos/dist/handlers'
 
-import { isAuthorized } from '@tinacms/auth'
-
 export const config = mediaHandlerConfig
 
 export default createMediaHandler({
