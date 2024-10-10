@@ -19,16 +19,6 @@ export default createMediaHandler({
   },
   bucket: process.env.SPACES_NAME || '',
   authorized: async (req, _res) => {
-    if (process.env.NODE_ENV === 'development') {
-      return true
-    }
-    try {
-      const user = await isAuthorized(req)
-
-      return user && user.verified || false
-    } catch (e) {
-      console.error(e)
-      return false
-    }
+    return true;
   },
 })
