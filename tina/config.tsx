@@ -18,10 +18,9 @@ export default defineConfig({
     outputFolder: "admin",
   },
   media: {
-    tina: {
-      mediaRoot: "",
-      publicFolder: "public",
-      static: true,
+    loadCustomStore: async () => {
+      const pack = await import('next-tinacms-dos')
+      return pack.TinaCloudDOSMediaStore
     },
   },
   schema: {
